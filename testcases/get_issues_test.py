@@ -9,4 +9,3 @@ def test_get_issues_with_404():
 
 def test_get_issues_with_fastapi(auth):
     issues = list(get_issues('tiangolo', 'fastapi', auth=auth))
-    import pdb; pdb.set_trace()

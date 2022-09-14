@@ -1,46 +1,64 @@
-from typing import List
+"""
+this module provides the function get_issues.
+"""
+
 from typing import Optional
+from typing import Union
+from typing import Dict
+from typing import Tuple
+from typing import Generator
 from http import HTTPStatus
 from enum import Enum
-from tqdm import tqdm
 from time import sleep
+from datetime import datetime
+from logging import Logger
+from logging import getLogger
 
 from pydantic import BaseModel
-from pydantic import Field
 from requests import Session
-
-class NotFoundException(Exception):
-    def __init__(self, owner, repository):
-        super().__init__(f'cannot find the repository {owner}/{repository}')
+from tqdm import tqdm
 
 class IssueState(Enum):
+    """
+    this class is enumeration of issue state.
+    """
     CLOSE = 'closed'
     OPEN = 'open'
 
 class Issue(BaseModel):
+    """
+    this is the is class Issue.
+    """
     title: str
     body: Optional[str]
     number: int
     state: IssueState
+    created_at: datetime
 
-def get_issues(owner, repository, page_index=1, waiting_time=1, auth=None):
+def get_issues(
+    owner: str,
+    repository: str,
+    page_index: int = 1,
+    waiting_time: int = 1,
+    auth: Optional[Tuple[str, str]] = None,
+    logger: Optional[Logger] = None
+) -> Generator[Issue, None, None]:
+    """
+    this function is used to get all issue of the specified repository.
+    """
+    logger = logger or getLogger('dummy')
+    url = f'https://api.github.com/repos/{owner}/{repository}/issues'
     session = Session()
     session.auth = auth
 
-    url = f'https://api.github.com/repos/{owner}/{repository}/issues'
-
-    page_index = 1
-    progress_bar = tqdm(total=0)
+    progress_bar: tqdm = tqdm(total=0)
 
     while True:
-        parameters = {'per_page': 100, 'page': page_index, 'state': ['all']}
+        parameters: Dict[str, Union[int, str]] = {'per_page': 100, 'page': page_index, 'state': 'all'}
         response = session.get(url, params=parameters)
 
-        if response.status_code == HTTPStatus.NOT_FOUND:
-            raise NotFoundException(owner, repository)
-
         if response.status_code == HTTPStatus.FORBIDDEN:
-            print(f'api rate limit exceeded, waiting {waiting_time}s', response.text)
+            logger.warning('api rate limit exceeded, waiting %d seconds', waiting_time)
             sleep(waiting_time)
             waiting_time *= 2
             continue
@@ -48,19 +66,18 @@ def get_issues(owner, repository, page_index=1, waiting_time=1, auth=None):
         waiting_time = 1
 
         if not response.status_code == HTTPStatus.OK:
+            logger.warning('there are something wrong when call the api, the response is %s', response.text)
             break
 
         delta_issues = [Issue(**item) for item in response.json()]
         if not delta_issues:
-            print('exit on', page_index)
             break
 
         maximum_number = max(item.number for item in delta_issues)
         minimum_number = max(item.number for item in delta_issues)
 
-        progress_bar.total = max(progress_bar.total, maximum_number)
-
-        progress_bar.update(progress_bar.total - minimum_number - progress_bar.n)
+        progress_bar.total = max(progress_bar.total, maximum_number) # type: ignore
+        progress_bar.update(progress_bar.total - minimum_number - progress_bar.n) # type: ignore
 
         yield from delta_issues
         page_index += 1
