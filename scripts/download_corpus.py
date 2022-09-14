@@ -74,4 +74,4 @@ with open(join(dirname(dirname(__file__)), 'crazy_thursday', '__init__.py'), 'w'
 call(['git', 'add', '.'])
 call(['git', 'commit', '-m', 'add corpus'])
 call(['git', 'remote', 'set-url', 'origin', f'https://{arguments.username}:{arguments.token}@github.com/zqmillet/crazy-thursday.git'])
-call(['git', 'push', 'origin', 'master'])
+call(['git', 'push'])
