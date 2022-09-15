@@ -20,3 +20,9 @@ jobs:
       run: |
         export PYTHONPATH='.'
         python scripts/update_curpus.py
+    - name: Commit and Push
+      run: |
+        git config --global user.name 'kinopico'
+        git config --global user.email 'zqmillet@qq.com'
+        git commit -am "automated report"
+        git push
