@@ -47,10 +47,10 @@ year, month, day, build = VERSION
 today = datetime.today().date()
 publish_date = datetime(year, month, day).date()
 
-if today == publish_date:
-    build += 1
-else:
+if today > publish_date:
     build = 0
+else:
+    build += 1
 
 with open(join(dirname(dirname(__file__)), 'crazy_thursday', '__init__.py'), 'w', encoding='utf8') as file:
-    file.write(f'VERSION = ({year}, {month}, {day}, {build})')
+    file.write(f'VERSION = ({today.year}, {today.month}, {today.day}, {build})')
