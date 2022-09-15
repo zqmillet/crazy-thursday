@@ -31,15 +31,13 @@ $ crazy-thursday
 
 后台有一个定时任务, 定时收集本项目的所有 issue, 并汇总打包成 ``.whl`` 文件, 发布到 [PyPI](https://pypi.org/project/crazy-thursday/) 上.
 
-## 系统架构
-
-
+## 工作原理
 
 ```mermaid
 graph TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F["hello :bulb:"]
+    A("☁️ https://github.com/zqmillet/crazy-thursday") -->|collect issues| B("📄 crazy_thursday/corpus.jsonl")
+    B -->|update version| C("📄 crazy_thursday/__init__.py") 
+    C --> |commit & push| D("☁️ https://github.com/zqmillet/crazy-thursday")
+    D --> |build| E("📦 dist/crazy_thursday-*.whl")
+    E --> |publish| F("🌐 https://pypi.org/project/crazy-thursday")
 ```
