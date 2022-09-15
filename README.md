@@ -3,6 +3,7 @@
 [![](https://img.shields.io/badge/sponsored%20by-Crazy--Thursday-brightgreen?logo=KFC)](https://www.kfchk.com/index.html)
 [![](https://img.shields.io/badge/powered%20by-Github%20Actions-brightgreen?logo=Github)](https://docs.github.com/actions)
 [![](https://img.shields.io/pypi/v/crazy-thursday?logo=PyPI)](https://pypi.org/project/crazy-thursday/)
+[![](https://github.com/zqmillet/crazy-thursday/actions/workflows/update_curpus.yaml/badge.svg)](https://github.com/zqmillet/crazy-thursday/actions)
 
 大家好, 我是秦始皇, 其实我并没有死, 我在西安有 100000 吨黄金, 今天肯德基疯狂星期四, 谁可以 V 我 50 元, 我明天直接带部队复活, 让你统领三军!
 
