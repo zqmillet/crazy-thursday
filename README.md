@@ -1,6 +1,6 @@
 # crazy-thursday
 
-[![KFC](https://www.kfchk.com/index.html)](https://img.shields.io/badge/KFC-Crazy--Thursday-brightgreen?logo=KFC)
+[![](https://img.shields.io/badge/KFC-Crazy--Thursday-brightgreen?logo=KFC)](https://www.kfchk.com/index.html)
 ![https://docs.github.com/actions](https://img.shields.io/badge/Powered%20by-Github%20Actions-brightgreen?logo=Github)
 ![https://pypi.org/project/crazy-thursday/](https://img.shields.io/pypi/v/crazy-thursday?logo=PyPI)
 
