@@ -12,14 +12,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
-        pip install pylint-pydantic
-        pip install -r jmm/requirements.txt
-        pip install -r testcases/requirements.txt
-    - name: run pylint
+        python -m pip install -r crazy_thursday/requirements.txt
+    - name: Download Corpus
       run: |
         export PYTHONPATH='.'
-        pylint jmm testcases
+        python scripts/update_curpus.py
