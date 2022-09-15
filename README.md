@@ -2,6 +2,7 @@
 
 ![](https://img.shields.io/badge/KFC-Crazy--Thursday-brightgreen)
 ![](https://img.shields.io/badge/Powered%20by-Github%20Action-brightgreen)
+![](https://img.shields.io/pypi/v/crazy-thursday)
 
 大家好, 我是秦始皇, 其实我并没有死, 我在西安有 100000 吨黄金, 今天肯德基疯狂星期四, 谁可以 V 我 50 元, 我明天直接带部队复活, 让你统领三军!
 
