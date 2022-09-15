@@ -1,25 +1,27 @@
 # crazy-thursday
 
 ![](https://img.shields.io/badge/KFC-Crazy--Thursday-brightgreen)
+![](https://img.shields.io/badge/Powered%20by-KFC-brightgreen)
 
-I'm Qin Shi Huang. I'm alive, and I have 100,000 ton golden in Xi'An. Today is KFC Crazy Thursday, I will let you lead the three armies if you give me 50 yuan by WeChat.
+大家好, 我是秦始皇, 其实我并没有死, 我在西安有 100000 吨黄金, 今天肯德基疯狂星期四, 谁可以 V 我 50 元, 我明天直接带部队复活, 让你统领三军!
 
-## Install
+## 安装 
 
 ``` bash
 pip3 install crazy-thursday
 ```
 
-## Usage
+## 使用
+
+如果成功安装, 系统中便会存在一个名为 ``crazy-thursday`` 的命令. 直接调用 ``crazy-thursday`` 便会在控制台中输出一段疯狂星期四文案.
 
 ``` text
 $ crazy-thursday
-I'm Qin Shi Huang. I'm alive, and I have 100,000 ton golden in Xi'An.
-Today is KFC Crazy Thursday, I will let you lead the three armies if you give me 50 yuan by WeChat.
+大家好, 我是秦始皇, 其实我并没有死, 我在西安有 100000 吨黄金, 今天肯德基疯狂星期四, 谁可以 V 我 50 元, 我明天直接带部队复活, 让你统领三军!
 ```
 
-## How to Contribute
+## 如何贡献
 
-Just [open an issue](https://github.com/zqmillet/crazy-thursday/issues/new), and add leave a comment.
+你不需要贡献代码, 只需要[创建 issue](https://github.com/zqmillet/crazy-thursday/issues/new), 并且留下文案即可.
 
-There is a periodical task that collects all comments of issues and publish the module to [PyPI](https://pypi.org/project/crazy-thursday/).
+后台有一个定时任务, 定时收集本项目的所有 issue, 并汇总打包成 ``.whl`` 文件, 发布到 [PyPI](https://pypi.org/project/crazy-thursday/) 上.
