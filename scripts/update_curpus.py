@@ -37,22 +37,6 @@ argument_parser.add_argument(
     help='specify the output file path'
 )
 
-argument_parser.add_argument(
-    '--username',
-    action='store',
-    type=str,
-    required=True,
-    help='specify the github username'
-)
-
-argument_parser.add_argument(
-    '--token',
-    action='store',
-    type=str,
-    required=True,
-    help='specify the github token'
-)
-
 arguments = argument_parser.parse_args()
 
 with open(arguments.output_file_path, 'w', encoding='utf8') as file:
