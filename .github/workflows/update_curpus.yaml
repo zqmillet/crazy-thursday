@@ -1,7 +1,5 @@
 name: "update curpus"
-on:
-  schedule:
-    -
+on: [push]
 jobs:
   build:
     runs-on: macos-latest
