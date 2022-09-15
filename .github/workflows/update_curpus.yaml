@@ -1,7 +1,7 @@
 name: "update curpus"
 on:
   schedule:
-    - cron: 46,48,50,52,54,56,58 * * * *
+    - cron: '*/2 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
