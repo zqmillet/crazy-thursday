@@ -65,8 +65,10 @@ graph TD
     E --> |publish| F("🌐 https://pypi.org/project/crazy-thursday")
 ```
 
-- 首先会 clone 项目, 配置 Python, 安装依赖.
-- 执行 `scripts/update_curpus.py` 脚本, 自动抓去本项目的 issue 并保存到 `crazy_thursday/corpus.jsonl` 文件中.
+定时任务的工作流程为:
+
+- 首先 clone 项目, 配置 Python, 安装依赖.
+- 执行 `scripts/update_curpus.py` 脚本, 自动抓去本项目的所有 issue 并保存到 `crazy_thursday/corpus.jsonl` 文件中.
 - 更新 `crazy_thursday/__init__.py` 文件中的版本号.
 - 提交 commit 并且 push 回代码仓.
 - 将最新的代码打包成 `.whl` 文件, 并发布到 PyPI 上.
