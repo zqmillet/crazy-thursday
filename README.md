@@ -34,7 +34,7 @@ $ crazy-thursday
 ## 工作原理
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000000'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000000', 'nodeTextColor': "#FFFFFF"}}}%%
 
 graph TD
     A("☁️ https://github.com/zqmillet/crazy-thursday") -->|collect issues| B("📄 crazy_thursday/corpus.jsonl")
