@@ -7,7 +7,8 @@ with open(join(dirname(__file__), 'corpus.jsonl'), 'r', encoding='utf8') as file
     lines = file.readlines()
 
 def main():
-    print(loads(choice(lines))['body'])
+    item = loads(choice(lines))
+    print(item['body'] or item['title'])
 
 if __name__ == '__main__':
     main()

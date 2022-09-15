@@ -15,6 +15,7 @@ from logging import Logger
 from logging import getLogger
 
 from pydantic import BaseModel
+from pydantic import Field
 from requests import Session
 from tqdm import tqdm
 
@@ -25,6 +26,10 @@ class IssueState(Enum):
     CLOSE = 'closed'
     OPEN = 'open'
 
+class User(BaseModel):
+    name: str = Field(alias='login')
+    id: int
+
 class Issue(BaseModel):
     """
     this is the is class Issue.
@@ -34,6 +39,7 @@ class Issue(BaseModel):
     number: int
     state: IssueState
     created_at: datetime
+    user: User
 
 def get_issues(
     owner: str,
