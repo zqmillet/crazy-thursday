@@ -41,5 +41,5 @@ graph TD
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
-    C -->|Three| F["hello 🥰"]
+    C -->|Three| F["hello :bulb:"]
 ```
