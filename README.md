@@ -33,7 +33,7 @@ $ crazy-thursday
 
 ## 系统架构
 
-:bowtie:  😍
+
 
 ```mermaid
 graph TD
@@ -41,5 +41,5 @@ graph TD
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
-    C -->|Three| F[😍 Car]
+    C -->|Three| F[:bowtie: Car]
 ```
