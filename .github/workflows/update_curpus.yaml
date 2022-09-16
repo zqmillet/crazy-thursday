@@ -21,6 +21,7 @@ jobs:
     - name: Download Corpus
       run: |
         export PYTHONPATH='.'
+        python -m pip install -r scripts/requirements.txt
         python scripts/update_curpus.py
     - name: Commit and Push
       run: |
