@@ -24,11 +24,11 @@ python3 -m pip install crazy-thursday
 
 ``` text
 $ crazy-thursday
-大家好, 我是秦始皇, 其实我并没有死, 我在西安有 100000 吨黄金,
-今天肯德基疯狂星期四, 谁可以 V 我 50 元, 我明天直接带部队复活,
-让你统领三军!
-                                                   by zqmillet
-                                  at 2022-09-15T08:39:49+00:00
+I'm Qin Shi Huang. I'm alive, and I have 100,000 ton golden in Xi'An.
+Today is KFC Crazy Thursday, I will let you lead the three armies if
+you give me 50 yuan by WeChat.
+                                                          by zqmillet
+                                         at 2022-09-15T08:39:49+00:00
 ```
 
 ## 如何贡献
