@@ -11,7 +11,8 @@ from logging import info
 from logging import basicConfig
 from pytz import timezone
 
-from crazy_thursday.get_issues import get_issues
+from scripts.get_issues import get_issues
+
 from crazy_thursday import VERSION
 
 basicConfig(level=DEBUG)
@@ -50,7 +51,7 @@ with open(arguments.output_file_path, 'w', encoding='utf8') as file:
 
 year, month, day, build = VERSION
 now = datetime.now(timezone('Asia/Shanghai'))
-info('today is %s', now)
+info('now is %s', now)
 today = now.date()
 publish_date = datetime(year, month, day).date()
 
