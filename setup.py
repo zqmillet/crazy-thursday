@@ -26,5 +26,11 @@ setup(
     long_description_content_type='text/markdown',
     package_data={
         'crazy_thursday': ['*'],
+    },
+    entry_points = {
+        'console_scripts': [
+            'crazy-thursday=crazy_thursday.__main__:main',
+            'kfc=crazy_thursday.__main__:main',
+        ],
     }
 )
