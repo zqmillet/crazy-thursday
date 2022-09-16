@@ -6,14 +6,13 @@ from argparse import ArgumentParser
 from os.path import dirname
 from os.path import join
 from datetime import datetime
-from subprocess import call
+from logging import DEBUG
+from logging import info
+from logging import basicConfig
 from pytz import timezone
 
 from crazy_thursday.get_issues import get_issues
 from crazy_thursday import VERSION
-from logging import DEBUG
-from logging import info
-from logging import basicConfig
 
 basicConfig(level=DEBUG)
 
