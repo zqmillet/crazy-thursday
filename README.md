@@ -22,9 +22,7 @@ python3 -m pip install crazy-thursday
 
 如果成功安装, 系统中便会存在一个名为 `crazy-thursday` 的命令. 直接调用 `crazy-thursday` 便会在控制台中输出一段疯狂星期四文案.
 
-<!-- insert
 <asciinema-player src="./static/kfc.cast" poster="npt:0:01"></asciinema-player>
-end_insert -->
 
 ``` text
 $ crazy-thursday
