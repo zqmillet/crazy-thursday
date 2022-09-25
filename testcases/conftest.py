@@ -1,6 +1,9 @@
 from pytest import fixture
 
 def pytest_addoption(parser):
+    """
+    this function is used to add some option of pytest.
+    """
     parser.addoption(
         '--token',
         type=str,

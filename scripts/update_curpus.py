@@ -56,7 +56,7 @@ today = now.date()
 publish_date = datetime(year, month, day).date()
 
 if today > publish_date:
-    build = 0
+    build *= 0
 else:
     build += 1
 

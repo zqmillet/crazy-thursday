@@ -6,6 +6,7 @@ from typing import Optional
 from typing import Union
 from typing import Dict
 from typing import Tuple
+from typing import List
 from typing import Generator
 from http import HTTPStatus
 from enum import Enum
@@ -16,6 +17,7 @@ from logging import getLogger
 
 from pydantic import BaseModel
 from pydantic import Field
+from pydantic import validator
 from requests import Session
 from tqdm import tqdm
 
@@ -27,8 +29,18 @@ class IssueState(Enum):
     OPEN = 'open'
 
 class User(BaseModel):
+    """
+    this class is user of issue.
+    """
     name: str = Field(alias='login')
     id: int
+
+class Label(BaseModel):
+    """
+    this class is label of issue.
+    """
+    id: int
+    name: str
 
 class Issue(BaseModel):
     """
@@ -40,6 +52,16 @@ class Issue(BaseModel):
     state: IssueState
     created_at: datetime
     user: User
+    labels: List[Label]
+
+    @validator('body')
+    def validate_body(cls, value: Optional[str]) -> Optional[str]: # pylint: disable = no-self-argument
+        """
+        this function is used to remote first second lines of body.
+        """
+        if not value:
+            return None
+        return '\n'.join(value.splitlines()[2:])
 
 def get_issues(
     owner: str,
@@ -78,7 +100,6 @@ def get_issues(
         delta_issues = [Issue(**item) for item in response.json()]
         if not delta_issues:
             break
-        breakpoint()
 
         maximum_number = max(item.number for item in delta_issues)
         minimum_number = max(item.number for item in delta_issues)
@@ -86,5 +107,9 @@ def get_issues(
         progress_bar.total = max(progress_bar.total, maximum_number) # type: ignore
         progress_bar.update(progress_bar.total - minimum_number - progress_bar.n) # type: ignore
 
-        yield from delta_issues
+        for issue in delta_issues:
+            if 'add article' not in [label.name for label in issue.labels]:
+                continue
+            yield issue
+
         page_index += 1
