@@ -1,6 +1,6 @@
 name: "update curpus"
 on:
-  # push:
+  push:
   schedule:
     - cron: '23 5,17 * * *'
 jobs:
