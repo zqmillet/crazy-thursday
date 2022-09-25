@@ -45,9 +45,13 @@ argument_parser.add_argument(
 
 arguments = argument_parser.parse_args()
 
+count = 0
 with open(arguments.output_file_path, 'w', encoding='utf8') as file:
     for issue in get_issues(owner=arguments.owner, repository=arguments.repository):
         file.write(issue.json(ensure_ascii=False) + '\n')
+        count + 1
+
+print(f'there are {count} articles')
 
 year, month, day, build = VERSION
 now = datetime.now(timezone('Asia/Shanghai'))
