@@ -45,13 +45,11 @@ argument_parser.add_argument(
 
 arguments = argument_parser.parse_args()
 
-count = 0
-with open(arguments.output_file_path, 'w', encoding='utf8') as file:
-    for issue in get_issues(owner=arguments.owner, repository=arguments.repository):
-        file.write(issue.json(ensure_ascii=False) + '\n')
-        count + 1
+issues = list(get_issues(owner=arguments.owner, repository=arguments.repository))
+print(f'there are {len(issues)} articles')
 
-print(f'there are {count} articles')
+with open(arguments.output_file_path, 'w', encoding='utf8') as file:
+    file.writelines([issue.json(ensure_ascii=False) + '\n' for issue in issues])
 
 year, month, day, build = VERSION
 now = datetime.now(timezone('Asia/Shanghai'))
