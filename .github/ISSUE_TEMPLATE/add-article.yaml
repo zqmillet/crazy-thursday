@@ -3,14 +3,6 @@ description: contribute an article about crazy thursday
 title: thanks for taking the time to contribute article about crazy-thursday.
 labels: ["add article"]
 body:
-  - type: input
-    id: signature
-    attributes:
-      label: your name
-      description: this signature will be displayed in output of the command ``crazy-thursday`` provided by this package. if you leave this input box blank, your github id will be displayed.
-      placeholder: "example: kinopico"
-    validations:
-      required: false
   - type: textarea
     id: article
     attributes:

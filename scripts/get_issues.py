@@ -78,6 +78,7 @@ def get_issues(
         delta_issues = [Issue(**item) for item in response.json()]
         if not delta_issues:
             break
+        breakpoint()
 
         maximum_number = max(item.number for item in delta_issues)
         minimum_number = max(item.number for item in delta_issues)
