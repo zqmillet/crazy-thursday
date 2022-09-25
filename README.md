@@ -18,36 +18,19 @@ pip3 install crazy-thursday
 python3 -m pip install crazy-thursday
 ```
 
-![](static/install.svg)
+![](./static/install.svg)
 
 ## 使用
 
-如果成功安装, 系统中便会存在一个名为 `crazy-thursday` 的命令. 直接调用 `crazy-thursday` 便会在控制台中输出一段疯狂星期四文案.
+如果成功安装, 系统中便会存在一个名为 `crazy-thursday` 和一个名为 `kfc` 的命令. 直接调用 `crazy-thursday` 或 `kfc` 便会在控制台中随机地输出一段疯狂星期四文案.
 
-![](static/kfc.svg)
-
-``` text
-$ crazy-thursday
-I'm Qin Shi Huang. I'm alive, and I have 100,000 ton golden in Xi'An.
-Today is KFC Crazy Thursday, I will let you lead the three armies if
-you give me 50 yuan by WeChat.
-                                                          by zqmillet
-                                         at 2022-09-15T08:39:49+00:00
-```
+![](./static/kfc.svg)
 
 ## 如何贡献
 
-你不需要贡献代码, 只需要[创建 issue](https://github.com/zqmillet/crazy-thursday/issues/new), 并且留下文案即可.
+你不需要贡献代码, 只需要[创建 issue](https://github.com/zqmillet/crazy-thursday/issues/new?assignees=&labels=add+article&template=add-article.yaml&title=thanks+for+taking+the+time+to+contribute+article+about+crazy-thursday.), 并且留下文案即可.
+
 后台有一个定时任务, 定时收集本项目的所有 issue, 并汇总打包成 `.whl` 文件, 发布到 [PyPI](https://pypi.org/project/crazy-thursday/) 上.
-
-值得注意的是, 一个 issue 由两部分组成: Title 和 Comment.
-
-- Title 是必填项, 只能有一行.
-- Comment 是选填项, 可以有多行, 并且支持 Markdown.
-
-如果你的文案只有一行, 可以把文案写在 Title 中, Comment 留空; 如果你的文案很长, 分段落, 则需要将文案写在 Comment 中.
-
-在执行 ``crazy-thursday`` 命令时, 会优先显示 Comment 中的内容, 如果 Comment 内容为空, 则显示 Title 中的内容.
 
 ## 版本号
 
@@ -83,4 +66,4 @@ graph TD
 - 提交 commit 并且 push 回代码仓.
 - 将最新的代码打包成 `.whl` 文件, 并发布到 PyPI 上.
 
-该定时任务每天会执行一次, 你提交的 issue 会出现在第二天的版本中.
+该定时任务每天会执行两次, 你提交的 issue 会出现在第二天的版本中.
