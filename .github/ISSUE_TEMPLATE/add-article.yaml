@@ -15,7 +15,7 @@ body:
     id: article
     attributes:
       label: article
-      description: you can leave the crazy thursday article here. you can use markdown format, and the command ``crazy-thursday`` 
+      description: you can leave the crazy thursday article here. markdown format is suggested, and the command ``crazy-thursday`` can render markdown in terminal.
       placeholder: v me 50!
     validations:
       required: true
