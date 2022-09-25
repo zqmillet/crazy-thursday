@@ -18,7 +18,7 @@ pip3 install crazy-thursday
 python3 -m pip install crazy-thursday
 ```
 
-![](./static/install.svg)
+![install](./static/install.svg)
 
 ## 使用
 
