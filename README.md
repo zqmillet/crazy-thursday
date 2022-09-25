@@ -18,11 +18,11 @@ pip3 install crazy-thursday
 python3 -m pip install crazy-thursday
 ```
 
+![](./static/install.svg)
+
 ## 使用
 
 如果成功安装, 系统中便会存在一个名为 `crazy-thursday` 的命令. 直接调用 `crazy-thursday` 便会在控制台中输出一段疯狂星期四文案.
-
-[![demo](https://asciinema.org/a/335480.svg)](https://asciinema.org/a/335480?autoplay=1)
 
 ``` text
 $ crazy-thursday
