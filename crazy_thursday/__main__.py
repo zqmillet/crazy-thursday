@@ -17,7 +17,7 @@ def main() -> None:
     item = loads(choice(lines))
     Console().print(
         Panel(
-            renderable=Markdown(item['body']),
+            renderable=Markdown(item['body'].strip()),
             subtitle=f"create by {item['user']['name']} at {item['created_at']}",
             subtitle_align='right',
         )
