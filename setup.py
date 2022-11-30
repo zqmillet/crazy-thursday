@@ -19,7 +19,7 @@ setup(
     author='kinopico',
     author_email='zqmillet@qq.com',
     url='https://github.com/zqmillet/sphinx-console',
-    description='an extension for sphinx to display console in sphinx documents',
+    description='a cli tool to print crazy thursday article',
     packages=find_packages(),
     install_requires=install_requires,
     long_description=long_description,
